@@ -17,6 +17,7 @@ namespace Calculator
             Console.WriteLine("2 - Subtração");
             Console.WriteLine("3 - Multiplicação");
             Console.WriteLine("4 - Divisão");
+            Console.WriteLine("5 - Sair");
 
             Console.WriteLine("----------------");
             Console.WriteLine("Selecione uma opção: ");
@@ -25,8 +26,9 @@ namespace Calculator
             switch(resultado){
                 case 1: Soma(); break;
                 case 2: Subtracao(); break;
-                case 3: Multiplicao(); break;
+                case 3: Multiplicacao(); break;
                 case 4: Divisao(); break;
+                case 5: System.Environment.Exit(0); break;
                 default: Menu(); break;
             }
 
@@ -57,12 +59,14 @@ namespace Calculator
             var segundoValor = float.Parse(Console.ReadLine());
 
             var resultado = primeiroValor - segundoValor;
+
+            Console.WriteLine();
             Console.WriteLine($"O resultado é {resultado}");
             Console.ReadKey();
             Menu();
 
         }
-        static void Multiplicao()
+        static void Multiplicacao()
         {
             Console.Clear();
             Console.WriteLine("Primeiro valor ");
@@ -72,7 +76,10 @@ namespace Calculator
             var segundoValor = float.Parse(Console.ReadLine());
 
             var resultado = primeiroValor * segundoValor;
+
+            Console.WriteLine();
             Console.WriteLine($"O resultado é {resultado}");
+            Console.ReadKey();
             Menu();
         }
         static void Divisao()
@@ -86,6 +93,7 @@ namespace Calculator
 
             var resultado = primeiroValor/segundoValor;
 
+            Console.WriteLine();
             Console.WriteLine($"O resultado é {resultado}");
             Console.ReadKey();
             Menu();
